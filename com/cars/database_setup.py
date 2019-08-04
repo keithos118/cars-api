@@ -18,7 +18,7 @@ class Car(Base):
    @property
    def serialize(self):
       return {
-         'chassis_no': self.chassis_no,
+         #'chassis_no': self.chassis_no, // Hidden from response
          'make': self.make,
          'model': self.model,
          'year': self.year,
