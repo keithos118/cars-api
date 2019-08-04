@@ -18,8 +18,17 @@ def all_cars():
    if request.method == 'GET':
        return get_cars()
 
+@app.route("/cars/<id>", methods = ['GET'])
+def cars_by_id(id):
+   if request.method == 'GET':
+       return get_car_by_id(id)
+
 def get_cars():
     cars = session.query(Car).all()
+    return jsonify(cars=[c.serialize for c in cars])
+
+def get_car_by_id():
+    cars = session.query(Car).filter_by(id=id).all()
     return jsonify(cars=[c.serialize for c in cars])
 
 if __name__ == '__main__':
