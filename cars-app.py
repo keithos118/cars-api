@@ -33,7 +33,7 @@ def cars_average(name):
 
 
 @app.route("/cars/average/<name>/<model>/<year>", methods = ['GET'])
-def cars_average(name, model, year):
+def make_model_year_average(name, model, year):
     if request.method == 'GET':
         return average_price_make_model_year(name, model, year)
 
@@ -76,5 +76,5 @@ def average(data):
 
 
 if __name__ == '__main__':
-   app.run(debug=True, host='0.0.0.0')
-   #app.run(host='0.0.0.0', port='6446')
+   #app.run(debug=True, host='0.0.0.0')
+   app.run(host='0.0.0.0', port='6446')
