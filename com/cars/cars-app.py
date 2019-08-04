@@ -38,7 +38,9 @@ def get_car_by_id():
 
 
 def get_average_price(entry):
-    cars = session.query(Car).filter_by(make=entry).all()
+    cars = session.query(Car).filter_by(make=entry).all() \
+        or session.query(Car).filter_by(model=entry).all() \
+        or session.query(Car).filter_by(year=entry).all()
     cars_list = (c.serialize for c in cars)
 
     price_list = []
