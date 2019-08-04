@@ -31,6 +31,12 @@ def cars_average(name):
    if request.method == 'GET':
        return get_average_price(name)
 
+
+@app.route("/cars/average/<name>/<model>/<year>", methods = ['GET'])
+def cars_average(name, model, year):
+    if request.method == 'GET':
+        return average_price_make_model_year(name, model, year)
+
 def get_cars():
     cars = session.query(Car).all()
     return jsonify(cars=[c.serialize for c in cars])
@@ -51,6 +57,16 @@ def get_average_price(entry):
     for value in cars_list:
         price_list.append(value['price'])
     average_price = (average(price_list))
+    return jsonify(cars=average_price)
+
+
+def average_price_make_model_year(make, model,year):
+    cars = session.query(Car).filter_by(make=make, model=model, year=year).all()
+    li = (c.serialize for c in cars)
+    l = []
+    for p in li:
+        l.append(p['price'])
+    average_price = (average(l))
     return jsonify(cars=average_price)
 
 
