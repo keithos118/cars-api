@@ -49,7 +49,9 @@ def get_average_price(entry):
 
 
 def average(data):
-    return sum(data) / len(data)
+    result = sum(data) / len(data)
+    return round(result,2)
+
 
 if __name__ == '__main__':
    app.debug = True
