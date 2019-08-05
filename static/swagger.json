@@ -1,0 +1,29 @@
+{
+   "openapi":"3.0.0",
+   "info":{
+      "description":"Python Flask API",
+      "version":"1.0.0",
+      "title":"Python Flask API"
+   },
+   "tags":[
+      {
+         "name":"Car Request",
+         "description":"API for requesting and return car requests"
+      }
+   ],
+   "paths":{
+      "/cars":{
+         "get":{
+            "tags":[
+               "Cars Request"
+            ],
+            "summary":"Returns all Cars",
+            "responses":{
+               "200":{
+                  "description":"OK"
+               }
+            }
+         }
+      }
+   }
+}
