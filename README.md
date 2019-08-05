@@ -29,3 +29,5 @@ To view the documentation, we can access the swagger docs
 1) http://127.0.0.1:5000/api/docs/
 
 This will display and test the functionality.
+
+Thanks for reading.
