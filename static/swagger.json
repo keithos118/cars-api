@@ -24,6 +24,56 @@
                }
             }
          }
+      },
+      "/cars/{id}": {
+         "parameters": [
+            {
+               "name": "id",
+               "in": "path",
+               "required": true,
+               "description": "ID of the car that we want to match",
+               "type": "string"
+            }
+         ],
+         "get": {
+            "tags": [
+               "Car Request"
+            ],
+            "summary": "Get car request with given ID",
+            "parameters": [
+               {
+                  "in": "path",
+                  "name": "id",
+                  "required": true,
+                  "description": "Car Request id",
+                  "schema": {
+                     "$ref": "#/components/schemas/id"
+                  }
+               }
+            ],
+            "responses": {
+               "200": {
+                  "description": "OK"
+               },
+               "400": {
+                  "description": "Failed. Misunderstood Request."
+               },
+               "404": {
+                  "description": "Failed. Car request not found."
+               }
+            }
+         }
+      }
+   },
+   "components": {
+      "schemas": {
+         "id": {
+            "properties": {
+               "uuid": {
+                  "type": "string"
+               }
+            }
+         }
       }
    }
 }
