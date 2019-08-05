@@ -24,7 +24,7 @@ To run using docker, from the cars-api directory run the commands:
 
 Then access 127.0.0.1:5000/
 
-Once the app is running. We can see all cars, cards by ID and average price of cars by make, model or year.
+Once the app is running. We can see all cars, cars by ID and average price of cars by make, model or year.
 1) All cars - 127.0.0.1:5000/cars/
 2) Cars by ID - 127.0.0.1:5000/cars/2
 3) Make/Model/Year Average -  127.0.0.1:5000/cars/average/Nissan OR 127.0.0.1:5000/cars/average/2002 OR 127.0.0.1:5000/cars/average/Fiesta
