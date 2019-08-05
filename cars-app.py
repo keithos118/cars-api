@@ -90,5 +90,4 @@ def average(data):
 
 if __name__ == '__main__':
     app.register_blueprint(SWAGGERUI_BLUEPRINT, url_prefix=SWAGGER_URL)
-    app.run()
-   #app.run(debug=True, host='0.0.0.0', port='6446')
+    app.run(host='0.0.0.0')
