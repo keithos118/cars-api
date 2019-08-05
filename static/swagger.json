@@ -15,7 +15,7 @@
       "/cars":{
          "get":{
             "tags":[
-               "Cars Request"
+               "Car Request"
             ],
             "summary":"Returns all Cars",
             "responses":{
@@ -63,6 +63,45 @@
                }
             }
          }
+      },
+      "/cars/average/{makeModelPrice}":{
+         "parameters":[
+            {
+               "name":"make_model_price",
+               "in":"path",
+               "required":true,
+               "description":"Returns the average price by Make or Model or Year",
+               "type":"string"
+            }
+         ],
+         "get":{
+            "tags":[
+               "Car Request"
+            ],
+            "summary":"Returns the average price by Make or Model or Year",
+            "parameters":[
+               {
+                  "in":"path",
+                  "name":"make_model_price",
+                  "required":true,
+                  "description":"Car Request name",
+                 "schema": {
+                            "$ref": "#/components/schemas/name"
+                            }
+               }
+            ],
+            "responses":{
+               "200":{
+                  "description":"OK"
+               },
+               "400":{
+                  "description":"Failed. Misunderstood Request."
+               },
+               "404":{
+                  "description":"Failed. Car request not found."
+               }
+            }
+         }
       }
    },
    "components": {
@@ -71,6 +110,13 @@
             "properties": {
                "uuid": {
                   "type": "string"
+               }
+            }
+         },
+         "makeModelPrice":{
+            "properties":{
+               "makeModelPrice":{
+                  "type":"string"
                }
             }
          }
