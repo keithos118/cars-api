@@ -3,8 +3,20 @@ from flask import Flask, request, jsonify
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from database_setup import Base, Car
+from flask_swagger_ui import get_swaggerui_blueprint
 
 app = Flask(__name__)
+
+SWAGGER_URL = '/api/docs'
+API_URL = '/static/swagger.json'
+SWAGGERUI_BLUEPRINT = get_swaggerui_blueprint(
+    SWAGGER_URL,
+    API_URL,
+    config={
+        'app_name': "Python Flask API"
+    }
+)
+
 #Connect to Database and create database session
 engine = create_engine('sqlite:///cars-collection.db',connect_args={'check_same_thread': False})
 Base.metadata.bind = engine
@@ -16,8 +28,8 @@ session = DBSession()
 @app.route("/")
 @app.route("/cars/", methods = ['GET'])
 def all_cars():
-   if request.method == 'GET':
-       return get_cars()
+    if request.method == 'GET':
+        return get_cars()
 
 
 @app.route("/cars/<id>", methods = ['GET'])
@@ -28,14 +40,15 @@ def cars_by_id(id):
 
 @app.route("/cars/average/<name>", methods = ['GET', 'POST'])
 def cars_average(name):
-   if request.method == 'GET':
-       return get_average_price(name)
+    if request.method == 'GET':
+        return get_average_price(name)
 
 
 @app.route("/cars/average/<name>/<model>/<year>", methods = ['GET'])
 def make_model_year_average(name, model, year):
     if request.method == 'GET':
         return average_price_make_model_year(name, model, year)
+
 
 def get_cars():
     cars = session.query(Car).all()
@@ -76,5 +89,6 @@ def average(data):
 
 
 if __name__ == '__main__':
-   #app.run(debug=True, host='0.0.0.0')
-   app.run(host='0.0.0.0', port='6446')
+    app.register_blueprint(SWAGGERUI_BLUEPRINT, url_prefix=SWAGGER_URL)
+    app.run()
+   #app.run(debug=True, host='0.0.0.0', port='6446')
