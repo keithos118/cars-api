@@ -11,7 +11,12 @@ There are additional screenshots added here:
 
 To run the app, go to the cars-api directory after cloning the project.
 
-To run the app locally - python cars-app.py. Then navigate to 127.0.0.1:5000 in your browser. <- This port can be changed in the cars app file, I used 6446 for testing before intalling docker.
+To run the app locally you will need Flask, SQLAlchemy and flask_swagger_ui installed.
+1) pip install flask
+2) pip install sqlalchemy
+3) pip install flask_swagger_ui
+
+Then run the python file - python cars-app.py. Then navigate to 127.0.0.1:5000 in your browser. <- This port can be changed in the cars app file, I used 6446 for testing before intalling docker.
 
 To run using docker, from the cars-api directory run the commands:
 1) docker build -t cars-app:latest .
@@ -29,5 +34,6 @@ To view the documentation, we can access the swagger docs
 1) http://127.0.0.1:5000/api/docs/
 
 This will display and test the functionality.
+It will display 3 endpoints - all cars, cars by ID, average price.
 
 Thanks for reading.
