@@ -1,8 +1,9 @@
 # cars-api
 Python Flask API. 
 This API uses Python, Flask, SQLAlchemy, Flask Swagger UI. The response is returned in JSON format.
+
 There are additional screenshots added here:
-1) Curl and Web Browser Response https://github.com/keithos118/cars-api/tree/master/curl_and_response_images
+1) Curl and Web Browser Responses - https://github.com/keithos118/cars-api/tree/master/curl_and_response_images
 2) API Diagram - https://github.com/keithos118/cars-api/tree/master/diagram
 3) Swagger UI Document - https://github.com/keithos118/cars-api/tree/master/swagger_screenshots
 
