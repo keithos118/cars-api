@@ -36,4 +36,6 @@ To view the documentation, we can access the swagger docs
 This will display and test the functionality.
 It will display 3 endpoints - all cars, cars by ID, average price.
 
+https://github.com/keithos118/cars-api/tree/master/swagger_screenshots
+
 Thanks for reading.
