@@ -64,10 +64,10 @@
             }
          }
       },
-      "/cars/average/{makeModelPrice}":{
+        "/cars/average/{makeModelYear}":{
          "parameters":[
             {
-               "name":"make_model_price",
+               "name":"make_model_year",
                "in":"path",
                "required":true,
                "description":"Returns the average price by Make or Model or Year",
@@ -82,7 +82,7 @@
             "parameters":[
                {
                   "in":"path",
-                  "name":"make_model_price",
+                  "name":"make_model_year",
                   "required":true,
                   "description":"Car Request name",
                  "schema": {
@@ -113,9 +113,9 @@
                }
             }
          },
-         "makeModelPrice":{
+         "makeModelYear":{
             "properties":{
-               "makeModelPrice":{
+               "makeModelYear":{
                   "type":"string"
                }
             }
