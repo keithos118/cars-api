@@ -1,6 +1,7 @@
 # cars-api
 Python Flask API. 
 This API uses Python, Flask, SQLAlchemy, Flask Swagger UI, Docker. The response is returned in JSON format.
+
 I used Docker for Windows 10 and Python 3.7.4.
 
 There are additional screenshots added here:
