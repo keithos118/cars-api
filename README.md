@@ -1,16 +1,19 @@
 # cars-api
 Python Flask API. 
 This API uses Python, Flask, SQLAlchemy, Flask Swagger UI. The response is returned in JSON format.
+
 There are additional screenshots added here:
-https://github.com/keithos118/cars-api/tree/master/curl_and_response_images
-https://github.com/keithos118/cars-api/tree/master/diagram
+1) Curl and Web Browser Responses - https://github.com/keithos118/cars-api/tree/master/curl_and_response_images
+2) API Diagram - https://github.com/keithos118/cars-api/tree/master/diagram
+3) Swagger UI Document - https://github.com/keithos118/cars-api/tree/master/swagger_screenshots
 
 To run the app, go to the cars-api directory after cloning the project.
 
 To run the app locally - python cars-app.py. Then navigate to 127.0.0.1:5000 in your browser. <- This port can be changed in the cars app file, I used 6446 for testing before intalling docker.
 
 To run using docker, from the cars-api directory run the command:
-1) docker run -p 5000:5000 cars-app:latest
+1) docker build -t cars-app:latest .
+2) docker run -p 5000:5000 cars-app:latest
 
 Then access 127.0.0.1:5000/
 
