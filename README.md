@@ -12,7 +12,7 @@ To run the app, go to the cars-api directory after cloning the project.
 
 To run the app locally - python cars-app.py. Then navigate to 127.0.0.1:5000 in your browser. <- This port can be changed in the cars app file, I used 6446 for testing before intalling docker.
 
-To run using docker, from the cars-api directory run the command:
+To run using docker, from the cars-api directory run the commands:
 1) docker build -t cars-app:latest .
 2) docker run -p 5000:5000 cars-app:latest
 
