@@ -67,7 +67,7 @@
         "/cars/average/{makeModelYear}":{
          "parameters":[
             {
-               "name":"make_model_year",
+               "name":"makeModelYear",
                "in":"path",
                "required":true,
                "description":"Returns the average price by Make or Model or Year",
@@ -82,11 +82,11 @@
             "parameters":[
                {
                   "in":"path",
-                  "name":"make_model_year",
+                  "name":"makeModelYear",
                   "required":true,
                   "description":"Car Request name",
                  "schema": {
-                            "$ref": "#/components/schemas/name"
+                            "$ref": "#/components/schemas/makeModelYear"
                             }
                }
             ],
